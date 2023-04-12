@@ -68,6 +68,9 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    // TO-DO
+    // Observer System will be implemented.
+    
     private void Update()
     {
         if ((missionCounter == 4) && (!_isButtonActive))
