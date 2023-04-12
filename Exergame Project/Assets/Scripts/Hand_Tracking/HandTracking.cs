@@ -297,7 +297,7 @@ public class HandTracking : MonoBehaviour
             // if there is object for grabbing
             leftHandedObj.GetComponent<Interactable>().handType = handType;
             leftHandedObj.GetComponent<Rigidbody>().isKinematic = true;
-            leftHandedObj.transform.SetParent(leftHandPoints.GetChild(9));
+            leftHandedObj.transform.SetParent(leftHandPoints.GetChild(9).GetChild(0));
             leftHandedObj.transform.localPosition = Vector3.zero;
         }
     }
