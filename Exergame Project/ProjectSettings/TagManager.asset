@@ -3,7 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HandObjects
+  - LapObject4
+  - LeftHand
+  - bottle
+  - LapObject2
+  - Sponge
+  - Counter
+  - LapObject3
+  - OutBorder
+  - RightHand
+  - LapObject1
+  - RightRecipe
+  - Common
+  - LeftRecipe
+  - UIControl
   layers:
   - Default
   - TransparentFX

@@ -2814,7 +2814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &133208671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2928,6 +2928,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1548269561}
         m_TargetAssemblyTypeName: Mission_5_UI_Control, Assembly-CSharp
         m_MethodName: LeftRecipeOperations
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2466449462524335343}
+        m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
+        m_MethodName: DecideRecipe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5740,6 +5752,36 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &286769015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286769016}
+  m_Layer: 0
+  m_Name: Food R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286769016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286769015}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2100096764}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289230635
 GameObject:
   m_ObjectHideFlags: 0
@@ -18965,7 +19007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &887056637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28773,7 +28815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334339141}
   m_Layer: 5
-  m_Name: Ingredients
+  m_Name: Left Ingredients
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29034,7 +29076,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c9cb89bd4ba1f54d94eade7f1a6ac80, type: 3}
-  m_Color: {r: 0.49848187, g: 0.20784311, b: 0.85882354, a: 1}
+  m_Color: {r: 0.8490566, g: 0.27634388, b: 0.5798249, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -30481,25 +30523,25 @@ MonoBehaviour:
   missionCounter: 0
   missions:
   - {fileID: 2466449462524335342}
-  - {fileID: 909993418}
-  - {fileID: 1022833349}
-  - {fileID: 7142499898717975263}
-  - {fileID: 321487279}
   - {fileID: 695490431}
   - {fileID: 417179916}
+  - {fileID: 1022833349}
+  - {fileID: 7142499898717975263}
+  - {fileID: 909993418}
+  - {fileID: 321487279}
   - {fileID: 975868890}
   - {fileID: 510219789}
   - {fileID: 1313732497}
   - {fileID: 742201414}
   cameraPoses:
   - {fileID: 573371894}
-  - {fileID: 212900139}
-  - {fileID: 1027108208}
-  - {fileID: 305601531}
-  - {fileID: 1426881300}
   - {fileID: 56656504}
   - {fileID: 1067375746}
+  - {fileID: 1027108208}
+  - {fileID: 305601531}
   - {fileID: 1460118468}
+  - {fileID: 212900139}
+  - {fileID: 1426881300}
   - {fileID: 643419924}
   - {fileID: 1383943121}
   - {fileID: 2092229281}
@@ -32320,7 +32362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 0
+  objectType: 1
   handType: 
 --- !u!1 &1463407557
 GameObject:
@@ -34241,7 +34283,7 @@ GameObject:
   - component: {fileID: 1548269561}
   m_Layer: 0
   m_Name: UIControl
-  m_TagString: Untagged
+  m_TagString: UIControl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34279,6 +34321,8 @@ MonoBehaviour:
   levelmanager: {fileID: 1389904016}
   isLeftRecipeSelected: 0
   isRightRecipeSelected: 0
+  selectedRecipe: 
+  clicked: 0
 --- !u!1 &1550962721
 GameObject:
   m_ObjectHideFlags: 0
@@ -35531,7 +35575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 1
+  objectType: 0
   handType: 
 --- !u!1 &1610439363
 GameObject:
@@ -36735,7 +36779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655192164}
   m_Layer: 0
-  m_Name: Food
+  m_Name: Food L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36760,7 +36804,7 @@ Transform:
   - {fileID: 543450653571421917}
   - {fileID: 543450653297959978}
   m_Father: {fileID: 2100096764}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664541133
 GameObject:
@@ -41812,7 +41856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 0
+  objectType: 1
   handType: 
 --- !u!1 &1929516308
 GameObject:
@@ -44714,7 +44758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2054995231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47401,6 +47445,7 @@ Transform:
   m_Children:
   - {fileID: 1337861456}
   - {fileID: 3326290489604511041}
+  - {fileID: 286769016}
   - {fileID: 1655192164}
   m_Father: {fileID: 1202472351}
   m_RootOrder: 1
@@ -53753,21 +53798,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTracking: {fileID: 27045966}
-  objectTypes: 00000000
+  objectTypes: 
   levelManager: {fileID: 1389904016}
   nextMission: {fileID: 2072957308}
   capacity: 0
   placeCounter: 0
+  requiredIngredients: []
+  isRecipeLoaded: 0
   UIControl: {fileID: 1548269561}
-  textParentObject: {fileID: 1291720815}
-  requiredIngredients:
+  correctIngredientSound: {fileID: 0}
+  requiredIngredientsRight:
   - {fileID: 919132147591950056}
   - {fileID: 919132148281579557}
   - {fileID: 919132149527402546}
   - {fileID: 919132148842952762}
   - {fileID: 919132149316340839}
+  requiredIngredientsLeft:
+  - {fileID: 919132147498437309}
+  - {fileID: 919132149565046416}
   selectedIngredients: []
-  correctIngredientSound: {fileID: 0}
+  textParentObjectRight: {fileID: 1291720815}
+  textParentObjectLeft: {fileID: 1334339140}
+  textParentObject: {fileID: 0}
 --- !u!65 &2466449462524335344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79329,6 +79381,14 @@ PrefabInstance:
     - target: {fileID: 6566357307308061705, guid: dad85e395c4e39849a45da8496945406, type: 3}
       propertyPath: m_Name
       value: Tray
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566357307308061705, guid: dad85e395c4e39849a45da8496945406, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566357307308061705, guid: dad85e395c4e39849a45da8496945406, type: 3}
+      propertyPath: m_TagString
+      value: UIControl
       objectReference: {fileID: 0}
     - target: {fileID: 6663214902310022940, guid: dad85e395c4e39849a45da8496945406, type: 3}
       propertyPath: m_Name

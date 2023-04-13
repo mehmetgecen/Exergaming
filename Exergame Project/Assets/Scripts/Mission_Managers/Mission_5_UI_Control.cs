@@ -16,19 +16,21 @@ public class Mission_5_UI_Control : MonoBehaviour
 
     public bool isLeftRecipeSelected = false;
     public bool isRightRecipeSelected = false;
+    public string selectedRecipe;
+    public bool clicked;
 
-    /*private void Awake()
+    private void Awake()
     {
-        Debug.Log("Mission Counter :" + levelmanager.missionCounter);
-            
-        leftRecipeButton.gameObject.SetActive(true);
-        rightRecipeButton.gameObject.SetActive(true);
-        
-    }*/
+        rightRecipeButton.onClick.AddListener(RightRecipeOperations);
+        leftRecipeButton.onClick.AddListener(LeftRecipeOperations);
+    }
+    
     
     public void LeftRecipeOperations()
     {
         isLeftRecipeSelected = true;
+        clicked = true;
+        selectedRecipe = "leftRecipe";
         
         leftRecipeButton.gameObject.SetActive(false);
         rightRecipeButton.gameObject.SetActive(false);
@@ -36,12 +38,15 @@ public class Mission_5_UI_Control : MonoBehaviour
         leftRecipeList.gameObject.SetActive(true);
 
         StartCoroutine(DisplayRecipe());
+        
 
     }
 
     public void RightRecipeOperations()
     {
         isRightRecipeSelected = true;
+        clicked = true;
+        selectedRecipe = "rightRecipe";
         
         leftRecipeButton.gameObject.SetActive(false);
         rightRecipeButton.gameObject.SetActive(false);
@@ -49,6 +54,11 @@ public class Mission_5_UI_Control : MonoBehaviour
         rightRecipeList.gameObject.SetActive(true);
         
         StartCoroutine(DisplayRecipe());
+    }
+
+    public string GetRecipeName()
+    {
+        return selectedRecipe;
     }
 
     public IEnumerator DisplayRecipe()

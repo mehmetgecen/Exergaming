@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -18,40 +19,74 @@ public class Recipe : MonoBehaviour
     [SerializeField] private int placeCounter = 0;
     #endregion
 
+
+    #region RecipeInformation Area
+
+    [SerializeField] List<GameObject> requiredIngredients; // List of required ingredients for this recipe
+    [SerializeField] private bool isRecipeLoaded;
+    
     public Mission_5_UI_Control UIControl;
-
-
-    public GameObject textParentObject;
-    public List<GameObject> requiredIngredients; // List of required ingredients for this recipe
-    public List<GameObject> selectedIngredients; // List of selected ingredients by the player
+    
     public AudioSource correctIngredientSound; // Sound to play when a correct ingredient is selected
     
-    void Start()
+    public List<GameObject> requiredIngredientsRight;
+    public List<GameObject> requiredIngredientsLeft;
+    public List<GameObject> selectedIngredients; // List of selected ingredients by the player
+    
+    public GameObject textParentObjectRight;
+    public GameObject textParentObjectLeft;
+    public GameObject textParentObject;
+
+    #endregion
+    
+    public void Start()
     {
         capacity = transform.childCount;
-        UIControl = GetComponent<Mission_5_UI_Control>();
+    }
 
-        /*if (UIControl.isLeftRecipeSelected)
+    private void Update()
+    {
+        if (UIControl.clicked)
         {
-            // use left recipe ingredients;
-            // requiredText = leftlisttext
+            LoadRecipeInfo(UIControl.selectedRecipe);
+            UIControl.clicked = false;
+        }
+    }
+
+    public void LoadRecipeInfo(string selectedRecipeString)
+    {
+        if (selectedRecipeString == null) return;
+        {
+            if (selectedRecipeString.Equals("leftRecipe"))
+            {
+                foreach (GameObject ingredient in requiredIngredientsLeft)
+                {
+                    requiredIngredients.Add(ingredient);
+                    print("Ingredient Added.");
+                }
+
+                textParentObject = textParentObjectLeft;
+            }
+
+            if (selectedRecipeString.Equals("rightRecipe"))
+            {
+                foreach (var ingredient in requiredIngredientsRight)
+                {
+                    requiredIngredients.Add(ingredient);
+                }
+
+                textParentObject = textParentObjectRight;
+            }
         }
 
-        if (UIControl.isRightRecipeSelected)
-        {
-            // use right recipe selected
-            // requiredText = rightListText
-        }*/
+        isRecipeLoaded = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if (collision.gameObject.GetComponent<Interactable>())
+        if (collision.gameObject.GetComponent<Interactable>() && isRecipeLoaded)
         {
             Debug.Log("Triggered");
-            
-            AddIngredient(collision.gameObject);
             
             Interactable interactable = collision.gameObject.GetComponent<Interactable>();
 
@@ -67,6 +102,8 @@ public class Recipe : MonoBehaviour
                 interactable.ReturnObjectToInitialPosition();
                 return;
             }
+            
+            AddIngredient(collision.gameObject);
 
             collision.gameObject.GetComponent<Collider>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -132,17 +169,7 @@ public class Recipe : MonoBehaviour
             Debug.Log("All required ingredients selected!");
         }
     }
-
-    // Update the required ingredients text object with the list of required ingredients
-    private void UpdateRequiredIngredientsText()
-    {
-        string requiredIngredientsString = "";
-        foreach (GameObject ingredient in requiredIngredients)
-        {
-            requiredIngredientsString = ingredient.name + "\n";
-        }
-        //requiredIngredientsText.text = requiredIngredientsString;
-    }
+    
 
     private void CheckUIText(GameObject textParent,GameObject ingredient)
     {
