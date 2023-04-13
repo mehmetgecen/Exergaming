@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class Replacer : MonoBehaviour
 {
@@ -15,16 +17,20 @@ public class Replacer : MonoBehaviour
     [SerializeField] private int placeCounter = 0;
     #endregion
 
+    
     void Start()
     {
         capacity = transform.childCount;
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.GetComponent<Interactable>())
         {
             Debug.Log("Triggered");
+            
             
             Interactable interactable = collision.gameObject.GetComponent<Interactable>();
 
@@ -74,4 +80,6 @@ public class Replacer : MonoBehaviour
 
         return isAccepted;
     }
+    
+    
 }

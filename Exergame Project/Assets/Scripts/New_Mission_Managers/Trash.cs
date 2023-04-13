@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
+using UnityEngine.UI;
 
 public class Trash : MonoBehaviour
 {
@@ -19,9 +22,12 @@ public class Trash : MonoBehaviour
     private int place_counter = 0;
     [SerializeField] private int capacity = 5;
     
+    
+    
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Interactable>() && other.gameObject.name == "holdable") // Recipe Control will be added;
+        if (other.gameObject.GetComponent<Interactable>()) // Recipe Control will be added;
         {
             handTracking.ResetHand(other.gameObject.GetComponent<Interactable>().handType);
             
@@ -31,9 +37,7 @@ public class Trash : MonoBehaviour
             other.gameObject.GetComponent<Collider>().enabled = false;
             other.gameObject.transform.DOMove(transform.GetChild(place_counter).position, 0.5f);
             other.gameObject.transform.DORotate(transform.GetChild(place_counter).eulerAngles, 0.5f);
-
-            // Play Success sound.
-
+            
             place_counter++;
         }
 
@@ -45,4 +49,9 @@ public class Trash : MonoBehaviour
             prevMission.SetActive(false);
         }
     }
+    
+    
+    
+    
 }
+
