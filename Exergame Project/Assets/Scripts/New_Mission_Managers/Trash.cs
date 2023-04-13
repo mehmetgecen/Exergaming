@@ -18,12 +18,7 @@ public class Trash : MonoBehaviour
 
     private int place_counter = 0;
     [SerializeField] private int capacity = 5;
-
-    private void Start()
-    {
-
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Interactable>() && other.gameObject.name == "holdable") // Recipe Control will be added;

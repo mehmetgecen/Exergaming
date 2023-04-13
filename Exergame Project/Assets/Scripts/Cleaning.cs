@@ -6,7 +6,6 @@ using UnityEngine;
 public class Cleaning : MonoBehaviour
 {
     public LevelManager levelManager;
-    public GameObject dirtPlane;
     public int cleanState = 0;// for different dirt phases.
     public GameObject[] ghostSpongePos; // 0 - 3
     public GameObject[] dirtAreas; // 0 - 3
