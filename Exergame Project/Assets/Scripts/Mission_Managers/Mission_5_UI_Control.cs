@@ -37,7 +37,7 @@ public class Mission_5_UI_Control : MonoBehaviour
         
         leftRecipeList.gameObject.SetActive(true);
 
-        StartCoroutine(DisplayRecipe());
+        //StartCoroutine(DisplayRecipe());
         
 
     }
@@ -53,7 +53,7 @@ public class Mission_5_UI_Control : MonoBehaviour
         
         rightRecipeList.gameObject.SetActive(true);
         
-        StartCoroutine(DisplayRecipe());
+        //StartCoroutine(DisplayRecipe());
     }
 
     public string GetRecipeName()
@@ -70,7 +70,7 @@ public class Mission_5_UI_Control : MonoBehaviour
             leftRecipeList.gameObject.SetActive(false);
         }
 
-        if (rightRecipeButton.IsActive())
+        if (rightRecipeList.IsActive())
         {
             rightRecipeList.gameObject.SetActive(false);
         }

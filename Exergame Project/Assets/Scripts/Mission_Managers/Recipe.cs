@@ -113,13 +113,13 @@ public class Recipe : MonoBehaviour
             placeCounter++;
         }
         
-        if (placeCounter >= capacity && !isMissionDone)
+        /*if (placeCounter >= capacity && !isMissionDone)
         {
             isMissionDone = true;
             nextMission.SetActive(true);
             levelManager.SkipMission();
             
-        }
+        }*/
     }
     
 
@@ -147,8 +147,7 @@ public class Recipe : MonoBehaviour
         if (requiredIngredients.Contains(ingredient))
         {
             requiredIngredients.Remove(ingredient);
-            //UpdateRequiredIngredientsText();
-
+            
             // Play the correct ingredient sound
             //correctIngredientSound.Play();
 
@@ -167,6 +166,9 @@ public class Recipe : MonoBehaviour
         {
             // Move on to the next step in the recipe
             Debug.Log("All required ingredients selected!");
+            isMissionDone = true;
+            nextMission.SetActive(true);
+            levelManager.SkipMission();
         }
     }
     

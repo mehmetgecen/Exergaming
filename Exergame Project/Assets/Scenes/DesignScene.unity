@@ -2937,18 +2937,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2466449462524335343}
-        m_TargetAssemblyTypeName: Recipe, Assembly-CSharp
-        m_MethodName: DecideRecipe
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   hoverSound: {fileID: 0}
   clickSound: {fileID: 0}
   normalText: {fileID: 1263890618}
@@ -7233,7 +7221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 0
+  objectType: 1
   handType: 
 --- !u!1 &340516463
 GameObject:
@@ -20075,7 +20063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &923351440
 Transform:
   m_ObjectHideFlags: 0
@@ -35575,7 +35563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 0
+  objectType: 1
   handType: 
 --- !u!1 &1610439363
 GameObject:
@@ -53798,7 +53786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTracking: {fileID: 27045966}
-  objectTypes: 
+  objectTypes: 01000000
   levelManager: {fileID: 1389904016}
   nextMission: {fileID: 2072957308}
   capacity: 0
@@ -53816,6 +53804,8 @@ MonoBehaviour:
   requiredIngredientsLeft:
   - {fileID: 919132147498437309}
   - {fileID: 919132149565046416}
+  - {fileID: 919132149527402546}
+  - {fileID: 919132147591950056}
   selectedIngredients: []
   textParentObjectRight: {fileID: 1291720815}
   textParentObjectLeft: {fileID: 1334339140}
