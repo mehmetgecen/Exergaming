@@ -4805,7 +4805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &214922055
 Transform:
   m_ObjectHideFlags: 0
@@ -14965,6 +14965,7 @@ GameObject:
   - component: {fileID: 695490435}
   - component: {fileID: 695490434}
   - component: {fileID: 695490433}
+  - component: {fileID: 695490436}
   m_Layer: 0
   m_Name: Door_Pivot (1)
   m_TagString: Untagged
@@ -15001,7 +15002,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &695490434
 BoxCollider:
@@ -15023,7 +15024,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695490431}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e43bf9a3d3609e42b05afb7a899bced, type: 3}
   m_Name: 
@@ -15034,6 +15035,19 @@ MonoBehaviour:
   maxZ: -1
   openObjects: []
   delayTime: 0
+--- !u!114 &695490436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695490431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de12e4602af0d344f99d4582a79a1b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationForce: 2
 --- !u!1 &700729714
 GameObject:
   m_ObjectHideFlags: 0
@@ -30510,10 +30524,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionCounter: 0
   missions:
-  - {fileID: 2466449462524335342}
-  - {fileID: 695490431}
-  - {fileID: 417179916}
   - {fileID: 1022833349}
+  - {fileID: 695490431}
+  - {fileID: 2466449462524335342}
+  - {fileID: 417179916}
   - {fileID: 7142499898717975263}
   - {fileID: 909993418}
   - {fileID: 321487279}
@@ -30522,10 +30536,10 @@ MonoBehaviour:
   - {fileID: 1313732497}
   - {fileID: 742201414}
   cameraPoses:
-  - {fileID: 573371894}
-  - {fileID: 56656504}
-  - {fileID: 1067375746}
   - {fileID: 1027108208}
+  - {fileID: 56656504}
+  - {fileID: 573371894}
+  - {fileID: 1067375746}
   - {fileID: 305601531}
   - {fileID: 1460118468}
   - {fileID: 212900139}
@@ -30535,9 +30549,9 @@ MonoBehaviour:
   - {fileID: 2092229281}
   missionUIControl: {fileID: 1548269561}
   missionDescriptions:
+  - Grab the refrigerator door handle and pull down to open the door.
   - Grab the doorknob and pull it down to open the door.
   - Put on the apron.
-  - Grab the refrigerator door handle and pull down to open the door.
   - Drop food from the refrigerator onto the tray
   - Add correct ingredients to tray.
   - Mix the Food via Spoon
@@ -47538,7 +47552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2105870389
 MonoBehaviour:
   m_ObjectHideFlags: 0
