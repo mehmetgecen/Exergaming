@@ -12,5 +12,4 @@ public class Food : MonoBehaviour
     }
 
     public FoodType foodType;
-    private string foodName;
 }

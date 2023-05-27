@@ -162,7 +162,7 @@ public class Recipe : MonoBehaviour
         }
 
         // Check if all required ingredients have been selected
-        if (requiredIngredients.Count == 0)
+        if (isAllIngredientsAdded())
         {
             // Move on to the next step in the recipe
             Debug.Log("All required ingredients selected!");
@@ -182,5 +182,10 @@ public class Recipe : MonoBehaviour
                 textParent.transform.GetChild(i).GetComponent<TextMeshProUGUI>().color = Color.green;
             }
         }
+    }
+
+    private bool isAllIngredientsAdded()
+    {
+        return requiredIngredients.Count == 0;
     }
 }
