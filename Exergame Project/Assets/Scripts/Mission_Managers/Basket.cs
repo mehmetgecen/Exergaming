@@ -33,7 +33,7 @@ public class Basket : MonoBehaviour
 
    }
    
-   public void AddItemToBasket(Food food)
+   public void AddItemToBasket(GameObject food)
    {
       currentItemsCount++;
 

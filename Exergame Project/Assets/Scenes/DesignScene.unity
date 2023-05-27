@@ -825,7 +825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &21091178
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,7 +2814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &133208671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9670,6 +9670,149 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425230110}
   m_CullTransparentMesh: 0
+--- !u!1 &425848802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425848803}
+  - component: {fileID: 425848809}
+  - component: {fileID: 425848808}
+  - component: {fileID: 425848807}
+  - component: {fileID: 425848806}
+  - component: {fileID: 425848805}
+  - component: {fileID: 425848804}
+  m_Layer: 0
+  m_Name: holdable (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425848803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.24, y: 18.081001, z: -16.89}
+  m_LocalScale: {x: 4.2788253, y: 4.2788253, z: 4.2788253}
+  m_Children: []
+  m_Father: {fileID: 1453019297}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425848804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc630443b03bfd4498cc2106387f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodType: 1
+--- !u!114 &425848805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae6f5f3833506f44a9bee54a1201b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableType: 1
+  objectType: 0
+  handType: 
+--- !u!54 &425848806
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!64 &425848807
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3209097409963520316, guid: 2a684583a7b0c7b48a9e09bd9cf74c11, type: 3}
+--- !u!23 &425848808
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -2609809028551464901, guid: 2a684583a7b0c7b48a9e09bd9cf74c11, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &425848809
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425848802}
+  m_Mesh: {fileID: 3209097409963520316, guid: 2a684583a7b0c7b48a9e09bd9cf74c11, type: 3}
 --- !u!1 &427174713
 GameObject:
   m_ObjectHideFlags: 0
@@ -16655,29 +16798,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21e61d5c4e86ee46a2cb9f924da639d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
-  nextMission: {fileID: 0}
-  capacity: 0
-  placeCounter: 0
-  onLevelEnded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1350905566}
-        m_TargetAssemblyTypeName: Basket, Assembly-CSharp
-        m_MethodName: EndLevelOperations
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  baskets:
-  - {fileID: 7142499898717975267}
-  - {fileID: 1015185769}
-  - {fileID: 1350905566}
+  fruitBasket: {fileID: 1015185769}
+  vegetableBasket: {fileID: 7142499898717975267}
+  dairyBasket: {fileID: 1350905566}
+  starterBasket: {fileID: 7142499898717975267}
+  handTracking: {fileID: 27045966}
+  levelManager: {fileID: 1389904016}
+  nextMission: {fileID: 1202472350}
 --- !u!4 &769867402
 Transform:
   m_ObjectHideFlags: 0
@@ -19092,7 +19219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &887056637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22374,7 +22501,6 @@ GameObject:
   - component: {fileID: 1015185775}
   - component: {fileID: 1015185774}
   - component: {fileID: 1015185773}
-  - component: {fileID: 1015185772}
   - component: {fileID: 1015185769}
   - component: {fileID: 1015185771}
   - component: {fileID: 1015185770}
@@ -22397,14 +22523,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8addfa2cb85e1b247bad5b402ed691e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTracking: {fileID: 0}
-  levelManager: {fileID: 0}
-  nextMission: {fileID: 0}
-  prevMission: {fileID: 0}
   acceptedFoodType: 0
   nextBasket: {fileID: 1350905566}
-  maxCapacity: 10
+  maxBasketCapacity: 4
   currentItemsCount: 0
+  placeCounter: 0
 --- !u!54 &1015185770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22435,25 +22558,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5578736434782089896, guid: f9aedafbad292ce40ab7066655f57081, type: 3}
---- !u!114 &1015185772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015185768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115f28362f3ee9547a0b390ee34ede23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handTracking: {fileID: 27045966}
-  levelManager: {fileID: 1389904016}
-  recipeController: {fileID: 1548269561}
-  formerPositions: []
-  currentMission: {fileID: 214922054}
-  prevMission: {fileID: 21091177}
-  capacity: 4
 --- !u!23 &1015185773
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29765,7 +29869,6 @@ GameObject:
   - component: {fileID: 1350905572}
   - component: {fileID: 1350905571}
   - component: {fileID: 1350905570}
-  - component: {fileID: 1350905569}
   - component: {fileID: 1350905566}
   - component: {fileID: 1350905568}
   - component: {fileID: 1350905567}
@@ -29788,14 +29891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8addfa2cb85e1b247bad5b402ed691e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTracking: {fileID: 0}
-  levelManager: {fileID: 0}
-  nextMission: {fileID: 0}
-  prevMission: {fileID: 0}
-  acceptedFoodType: 0
+  acceptedFoodType: 2
   nextBasket: {fileID: 0}
-  maxCapacity: 10
+  maxBasketCapacity: 4
   currentItemsCount: 0
+  placeCounter: 0
 --- !u!54 &1350905567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29826,25 +29926,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5578736434782089896, guid: f9aedafbad292ce40ab7066655f57081, type: 3}
---- !u!114 &1350905569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350905565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115f28362f3ee9547a0b390ee34ede23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handTracking: {fileID: 27045966}
-  levelManager: {fileID: 1389904016}
-  recipeController: {fileID: 1548269561}
-  formerPositions: []
-  currentMission: {fileID: 214922054}
-  prevMission: {fileID: 21091177}
-  capacity: 4
 --- !u!23 &1350905570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31270,11 +31351,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionCounter: 0
   missions:
+  - {fileID: 769867400}
   - {fileID: 2466449462524335342}
   - {fileID: 1022833349}
   - {fileID: 695490431}
   - {fileID: 417179916}
-  - {fileID: 769867400}
   - {fileID: 909993418}
   - {fileID: 321487279}
   - {fileID: 975868890}
@@ -31282,11 +31363,11 @@ MonoBehaviour:
   - {fileID: 1313732497}
   - {fileID: 742201414}
   cameraPoses:
+  - {fileID: 305601531}
   - {fileID: 573371894}
   - {fileID: 1027108208}
   - {fileID: 56656504}
   - {fileID: 1067375746}
-  - {fileID: 305601531}
   - {fileID: 1460118468}
   - {fileID: 212900139}
   - {fileID: 1426881300}
@@ -32873,6 +32954,7 @@ Transform:
   - {fileID: 1673876858949490365}
   - {fileID: 2865856496289605421}
   - {fileID: 6002026316492662283}
+  - {fileID: 425848803}
   m_Father: {fileID: 1198587600}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54324,7 +54406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &2049452904655227912
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56566,7 +56648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &3210576015699361176
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -58364,7 +58446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &4123002146306284904
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62961,7 +63043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &6341256905564306610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77820,7 +77902,6 @@ GameObject:
   - component: {fileID: 7517793640520444005}
   - component: {fileID: 6916204019155625920}
   - component: {fileID: 8655845505902220042}
-  - component: {fileID: 7142499898717975264}
   - component: {fileID: 7142499898717975267}
   - component: {fileID: 7142499898717975266}
   - component: {fileID: 7142499898717975265}
@@ -77831,25 +77912,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7142499898717975264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7142499898717975263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115f28362f3ee9547a0b390ee34ede23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handTracking: {fileID: 27045966}
-  levelManager: {fileID: 1389904016}
-  recipeController: {fileID: 1548269561}
-  formerPositions: []
-  currentMission: {fileID: 214922054}
-  prevMission: {fileID: 21091177}
-  capacity: 4
 --- !u!54 &7142499898717975265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77892,14 +77954,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8addfa2cb85e1b247bad5b402ed691e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTracking: {fileID: 0}
-  levelManager: {fileID: 1389904016}
-  nextMission: {fileID: 0}
-  prevMission: {fileID: 0}
-  acceptedFoodType: 0
+  acceptedFoodType: 1
   nextBasket: {fileID: 1015185769}
-  maxCapacity: 10
+  maxBasketCapacity: 4
   currentItemsCount: 0
+  placeCounter: 0
 --- !u!4 &7145757821444972839
 Transform:
   m_ObjectHideFlags: 0

@@ -9,26 +9,24 @@ public class FoodSorter : MonoBehaviour
     [SerializeField] private Basket fruitBasket;
     [SerializeField] private Basket vegetableBasket;
     [SerializeField] private Basket dairyBasket;
+    [SerializeField] private Basket starterBasket;
     
-    public EventManager eventManager;
-
     #region variables for replace mechanic
     public HandTracking handTracking;
     public LevelManager levelManager;
     public GameObject nextMission;
-    public GameObject prevMission;
     private GameObject currentMission;
     private bool isMissionDone;
     #endregion
     
-    private void Awake()
+    private void Start()
     {
-        Food[] foods = GameObject.FindObjectsOfType<Food>();
+        Food[] foods = FindObjectsOfType<Food>();
     }
     
     private void OnTriggerEnter(Collider other)
     {
-        Food[] foods = GameObject.FindObjectsOfType<Food>();
+        Food[] foods = FindObjectsOfType<Food>();
         
         if (other.gameObject.GetComponent<Interactable>()) // Recipe Control will be added;
         {
@@ -42,7 +40,7 @@ public class FoodSorter : MonoBehaviour
             foreach (Food food in foods)
             {
                 // Find the appropriate basket based on the food type
-                GameObject basketObject = GameObject.Find(food.foodType + "Basket"); // will be changed as start basket
+                GameObject basketObject = starterBasket.gameObject; // will be changed as start basket
 
                 if (basketObject != null)
                 {
@@ -51,13 +49,14 @@ public class FoodSorter : MonoBehaviour
                     // Check if the basket accepts this type of food
                     if (basket.CanAcceptFood(basket,food))
                     {
-                        basket.AddItemToBasket(food);
+                        basket.AddItemToBasket(other.gameObject);
                         other.gameObject.name = "sss";
                         other.GetComponent<Interactable>().enabled = false ;
                         other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                         other.gameObject.GetComponent<Collider>().enabled = false;
-                        other.gameObject.transform.DOMove(transform.GetChild(basket.GetPlaceCounter()).position, 0.5f);
-                        other.gameObject.transform.DORotate(transform.GetChild(basket.GetPlaceCounter()).eulerAngles, 0.5f);
+                        
+                        other.gameObject.transform.DOMove(basket.transform.GetChild(basket.GetPlaceCounter()).position, 0.5f);
+                        other.gameObject.transform.DORotate(basket.transform.GetChild(basket.GetPlaceCounter()).eulerAngles, 0.5f);
                         basket.IncrementPlaceCounter();
                     }
                     else
