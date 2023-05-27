@@ -2,6 +2,7 @@
 
 public class EventManager
 {
+    
     #region GameManager Events
     public static Func<GameData> getGameData;
     #endregion
