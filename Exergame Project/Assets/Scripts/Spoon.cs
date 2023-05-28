@@ -8,14 +8,15 @@ using Random = UnityEngine.Random;
 public class Spoon : MonoBehaviour
 {
     public LevelManager levelManager;
-    private float _currentRotation;
-    private float _speed = 50f;
-
-  
-
+    
     [Header("Lap Control Elements")]
     public Collider[] lapColliders;
     public bool l1,l2,l3,l4;
+    private int lapCount;
+    private int targetLapNumber = 3;
+    
+    private float _currentRotation;
+    private float _speed = 50f;
     
   
     private void OnTriggerEnter(Collider other)
@@ -49,15 +50,27 @@ public class Spoon : MonoBehaviour
 
 
             if (l1 && l2 && l3 && l4)
-            { 
-                Debug.Log("Lap Completed");
+            {
+                lapCount++;
+                Debug.Log("Lap Completed "+ "Current Lap: " + lapCount);
+                ResetLapElements();
+                
+            }
+
+            if (lapCount >= targetLapNumber)
+            {
                 gameObject.SetActive(false);
                 levelManager.SkipMission();
-                //level end operations.
             }
 
     }
-    
-    
+
+    private void ResetLapElements()
+    {
+        l1 = false;
+        l2 = false;
+        l3 = false;
+        l4 = false;
+    }
 }
 
