@@ -10,11 +10,13 @@ public class Basket : MonoBehaviour
    
    public int maxBasketCapacity = 4;
    public int currentItemsCount = 0;
-   public int placeCounter;
+   public int placeCounter = 0;
+   
+   public bool isCurrentBasket;
 
-   public bool CanAcceptFood(Basket basket, Food food)
+   public bool CanAcceptFood(Basket basket, Food.FoodType food)
    {
-      return basket.acceptedFoodType == food.foodType;
+      return basket.acceptedFoodType.Equals(food);
    }
    
    public bool IsFull()
@@ -27,34 +29,42 @@ public class Basket : MonoBehaviour
       gameObject.SetActive(false);
       nextBasket.gameObject.SetActive(true);
 
-      // Reset currentItemsCount
+      ResetCounters();
+   }
+
+   private void ResetCounters()
+   {
       currentItemsCount = 0;
       placeCounter = 0;
-
    }
-   
-   public void AddItemToBasket(GameObject food)
+
+   /*public void AddItemToBasket(GameObject food)
    {
       currentItemsCount++;
+      placeCounter++;
 
       if (IsFull())
       {
          SwitchToNextBasket();
       }
       
-   }
+   }*/
 
    public int GetPlaceCounter()
    {
       return placeCounter;
    }
 
-   public void IncrementPlaceCounter()
+   public int GetCurrentIndex()
    {
-      placeCounter++;
+      return currentItemsCount;
    }
 
-   
+   public void IncrementCounters()
+   {
+      placeCounter++;
+      currentItemsCount++;
+   }
    
    
 }
