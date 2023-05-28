@@ -26,12 +26,12 @@ public class FoodSorter : MonoBehaviour
     private bool isMissionDone;
     #endregion
     
+    private float disableCooldown = 0.5f;
+    
     private void Start()
     {
         fruitBasket.GetComponent<MeshCollider>().enabled = false;
         dairyBasket.GetComponent<MeshCollider>().enabled = false;
-            
-            
         
         // Set the initial current basket
         currentBasket = basketList[0];
@@ -53,70 +53,63 @@ public class FoodSorter : MonoBehaviour
             else
                 handTracking.ResetHand("left");
             
-            Food[] foods = FindObjectsOfType<Food>();
             
-            
-            foreach (Food food in foods)
-            {
-                GameObject basketObject = currentBasket.gameObject;
-                Food.FoodType foodType = other.gameObject.GetComponent<Food>().foodType;
+            GameObject basketObject = currentBasket.gameObject;
+            Food.FoodType foodType = other.gameObject.GetComponent<Food>().foodType;
                 
-                if (basketObject != null)
+            if (basketObject != null)
+            {
+                Basket basket = basketObject.GetComponent<Basket>();
+
+                // Check if the basket accepts this type of food
+                if (basket.CanAcceptFood(basket,foodType))
                 {
-                    Basket basket = basketObject.GetComponent<Basket>();
+                    Debug.Log(basket.CanAcceptFood(basket,foodType));
+                    other.gameObject.name = "sss";
+                    other.GetComponent<Interactable>().enabled = false ;
+                    other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    other.gameObject.GetComponent<Collider>().enabled = false;
+                        
+                    other.gameObject.transform.DOMove(basket.transform.GetChild(basket.GetPlaceCounter()).position, 0.5f);
+                    other.gameObject.transform.DORotate(basket.transform.GetChild(basket.GetPlaceCounter()).eulerAngles, 0.5f);
+                        
+                    foodObjects.Add(other.gameObject);
+                        
+                    basket.placeCounter++;
+                    basket.currentItemsCount++;
 
-                    // Check if the basket accepts this type of food
-                    if (basket.CanAcceptFood(basket,foodType))
+                    if (basket.IsFull())
                     {
-                        Debug.Log(basket.CanAcceptFood(basket,foodType));
-                        other.gameObject.name = "sss";
-                        other.GetComponent<Interactable>().enabled = false ;
-                        other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                        other.gameObject.GetComponent<Collider>().enabled = false;
-                        
-                        other.gameObject.transform.DOMove(basket.transform.GetChild(basket.GetPlaceCounter()).position, 0.5f);
-                        other.gameObject.transform.DORotate(basket.transform.GetChild(basket.GetPlaceCounter()).eulerAngles, 0.5f);
-                        
-                        foodObjects.Add(other.gameObject);
-                        
-                        basket.placeCounter++;
-                        basket.currentItemsCount++;
-
-                        if (basket.IsFull())
-                        {
-                            StartCoroutine(DisableFoodObjects());
-                            basket.gameObject.SetActive(false);
-                            Basket nextBasket = GetNextBasket();
+                        StartCoroutine(DisableFoodObjects());
+                        basket.gameObject.SetActive(false);
+                        Basket nextBasket = GetNextBasket();
                             
-                            if (nextBasket != null)
-                            {
-                                // Set the next basket as the current basket
-                                SetCurrentBasket(nextBasket);
-                                nextBasket.gameObject.SetActive(true);
-                            }
-                            else
-                            {
-                                // No more baskets available, end the level or perform other actions
-                                EndLevel();
-                            }
+                        if (nextBasket != null)
+                        {
+                            // Set the next basket as the current basket
+                            SetCurrentBasket(nextBasket);
+                            nextBasket.gameObject.SetActive(true);
                         }
-                    }
-                    else
-                    {
-                        
-                        interactable.ReturnObjectToInitialPosition();
-                        continue;
-                        Debug.LogWarning("The food object cannot be sorted into this basket.");
+                        else
+                        {
+                            // No more baskets available, end the level or perform other actions
+                            EndLevel();
+                        }
                     }
                 }
                 else
                 {
-                    Debug.LogError("Basket object not found for food type: " + food.foodType.ToString());
+                        
+                    interactable.ReturnObjectToInitialPosition();
+                    Debug.LogWarning("The food object cannot be sorted into this basket.");
                 }
             }
-         
+            else
+            {
+                Debug.LogError("Basket object not found for food type: " + foodType);
+            }
         }
-        
+
         CheckEndLevel();
 
     }
@@ -157,7 +150,7 @@ public class FoodSorter : MonoBehaviour
 
     public IEnumerator DisableFoodObjects()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(disableCooldown);
         
         foreach (var foodObject in foodObjects)
         {
