@@ -21,7 +21,7 @@ public class HandTracking : MonoBehaviour
     #endregion
 
     #region variables for object grabbing
-    public float grabbingRadius = 3.0f;
+    public float grabbingRadius = 2f;
     private GameObject rightHandedObj = null, leftHandedObj = null;
     #endregion
 

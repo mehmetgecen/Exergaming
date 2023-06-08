@@ -11,10 +11,9 @@ public class Recipe : MonoBehaviour
     public HandTracking handTracking;
     public ObjectType[] objectTypes;
     public LevelManager levelManager;
-
     public GameObject nextMission;
-    
     private bool isMissionDone;
+    
     [SerializeField] private int capacity;
     [SerializeField] private int placeCounter = 0;
     #endregion
