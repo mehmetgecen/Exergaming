@@ -19,6 +19,9 @@ TagManager:
   - Common
   - LeftRecipe
   - UIControl
+  - knifeTip
+  - Red
+  - Yellow
   layers:
   - Default
   - TransparentFX
