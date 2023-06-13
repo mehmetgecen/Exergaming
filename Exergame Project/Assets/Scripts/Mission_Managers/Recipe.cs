@@ -30,8 +30,8 @@ public class Recipe : MonoBehaviour
     
     public AudioSource correctIngredientSound; // Sound to play when a correct ingredient is selected
     
-    public Image leftRecipeList;
-    public Image rightRecipeList;
+    public GameObject leftRecipeList;
+    public GameObject rightRecipeList;
     
     public List<GameObject> requiredIngredientsRight;
     public List<GameObject> requiredIngredientsLeft;
@@ -177,8 +177,8 @@ public class Recipe : MonoBehaviour
             isMissionDone = true;
             nextMission.SetActive(true);
             levelManager.SkipMission();
-            leftRecipeList.enabled = false;
-            rightRecipeList.enabled = false;
+            leftRecipeList.SetActive(false);
+            rightRecipeList.SetActive(false);
         }
     }
     
