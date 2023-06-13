@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
     public string[] missionDescriptions;
     #endregion
 
+    [SerializeField] private AudioSource successSound;
+
     private void Start()
     {
         // set camera pos for first mission
@@ -31,10 +33,13 @@ public class LevelManager : MonoBehaviour
         // set description UI
         EventManager.updateDescription?.Invoke(missionDescriptions[missionCounter]);
         EventManager.updateMissionCircle?.Invoke(missionCounter, missions.Length);
+
+        successSound = GetComponent<AudioSource>();
     }
 
     public void SkipMission()
     {
+        successSound.Play();
         missionCounter++;
 
         if (missionCounter >= missions.Length) // level end control

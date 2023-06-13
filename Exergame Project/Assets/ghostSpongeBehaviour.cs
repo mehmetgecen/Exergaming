@@ -5,7 +5,7 @@ using UnityEngine;
 public class ghostSpongeBehaviour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other) {
-        if(other.tag =="Sponge"){
+        if(other.CompareTag("Sponge")){
             other.GetComponent<Cleaning>().nextState();
         }
     }
