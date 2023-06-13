@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class Recipe : MonoBehaviour
 {
      #region variables for replace mechanic
     public HandTracking handTracking;
-    public ObjectType[] objectTypes;
+    public List<ObjectType> objectTypes;
     public LevelManager levelManager;
     public GameObject nextMission;
     private bool isMissionDone;
@@ -58,6 +59,7 @@ public class Recipe : MonoBehaviour
         {
             if (selectedRecipeString.Equals("leftRecipe"))
             {
+                objectTypes.Add(ObjectType.type_2);
                 foreach (GameObject ingredient in requiredIngredientsLeft)
                 {
                     requiredIngredients.Add(ingredient);
@@ -69,6 +71,7 @@ public class Recipe : MonoBehaviour
 
             if (selectedRecipeString.Equals("rightRecipe"))
             {
+                objectTypes.Add(ObjectType.type_1);
                 foreach (var ingredient in requiredIngredientsRight)
                 {
                     requiredIngredients.Add(ingredient);
@@ -95,6 +98,7 @@ public class Recipe : MonoBehaviour
             else
                 handTracking.ResetHand("left");
 
+            
             // if not accepted
             if (!ControlObjectType(interactable.objectType))
             {
@@ -127,7 +131,7 @@ public class Recipe : MonoBehaviour
     {
         bool isAccepted = false;
 
-        for (int i = 0; i < objectTypes.Length; i++)
+        for (int i = 0; i < objectTypes.Count; i++)
         {
             if (objectTypes[i].Equals(type))
             {

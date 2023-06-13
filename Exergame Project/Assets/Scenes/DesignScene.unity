@@ -37401,7 +37401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableType: 2
-  objectType: 1
+  objectType: 2
   handType: 
 --- !u!1 &1610439363
 GameObject:
@@ -37621,6 +37621,7 @@ GameObject:
   - component: {fileID: 1639365899}
   - component: {fileID: 1639365897}
   - component: {fileID: 1639365900}
+  - component: {fileID: 1639365898}
   m_Layer: 0
   m_Name: LeftRecipeSelector
   m_TagString: Untagged
@@ -37658,6 +37659,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1639365898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639365895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be40cbb037d6f5d479a88edc10c80958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRightButtonTouched: 0
+  isLeftButtonTouched: 0
+  leftRecipeButton: {fileID: 133208673}
+  rightRecipeButton: {fileID: 887056639}
+  UIControl: {fileID: 1548269561}
 --- !u!135 &1639365899
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -52824,7 +52842,7 @@ GameObject:
   - component: {fileID: 1067954712}
   - component: {fileID: 1067954713}
   m_Layer: 0
-  m_Name: Biber
+  m_Name: Karabiber
   m_TagString: Common
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56357,7 +56375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTracking: {fileID: 27045966}
-  objectTypes: 01000000
+  objectTypes: 02000000
   levelManager: {fileID: 1389904016}
   nextMission: {fileID: 2072957308}
   capacity: 0
