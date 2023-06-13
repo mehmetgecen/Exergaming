@@ -5,6 +5,7 @@ using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Recipe : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class Recipe : MonoBehaviour
     public Mission_5_UI_Control UIControl;
     
     public AudioSource correctIngredientSound; // Sound to play when a correct ingredient is selected
+    
+    public Image leftRecipeList;
+    public Image rightRecipeList;
     
     public List<GameObject> requiredIngredientsRight;
     public List<GameObject> requiredIngredientsLeft;
@@ -107,7 +111,7 @@ public class Recipe : MonoBehaviour
             }
             
             AddIngredient(collision.gameObject);
-
+            correctIngredientSound.Play();
             collision.gameObject.GetComponent<Collider>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -173,6 +177,8 @@ public class Recipe : MonoBehaviour
             isMissionDone = true;
             nextMission.SetActive(true);
             levelManager.SkipMission();
+            leftRecipeList.enabled = false;
+            rightRecipeList.enabled = false;
         }
     }
     
