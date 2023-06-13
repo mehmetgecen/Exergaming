@@ -27,9 +27,12 @@ public class FoodSorter : MonoBehaviour
     #endregion
     
     private float disableCooldown = 0.5f;
-    
+    private AudioSource correctIngredientSound;
+
     private void Start()
     {
+        correctIngredientSound = GetComponent<AudioSource>();
+        
         fruitBasket.GetComponent<MeshCollider>().enabled = false;
         dairyBasket.GetComponent<MeshCollider>().enabled = false;
         
@@ -74,6 +77,8 @@ public class FoodSorter : MonoBehaviour
                     other.gameObject.transform.DORotate(basket.transform.GetChild(basket.GetPlaceCounter()).eulerAngles, 0.5f);
                         
                     foodObjects.Add(other.gameObject);
+                    
+                    correctIngredientSound.Play();
                         
                     basket.placeCounter++;
                     basket.currentItemsCount++;
