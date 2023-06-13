@@ -9,10 +9,11 @@ public class MatchPuzzle : MonoBehaviour
 {
     public bool isMatchCompleted;
     private static int matchCount = 0;
+    public HandTracking handTracking;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(gameObject.tag))
+        if (other.gameObject.CompareTag(gameObject.tag) && other.GetComponent<Interactable>())
         {
             matchCount++;
             other.gameObject.SetActive(false);
@@ -22,7 +23,7 @@ public class MatchPuzzle : MonoBehaviour
         }
         
 
-        if (matchCount >= 2 && (!other.gameObject.CompareTag(gameObject.tag)))
+        if (matchCount >= 2 && (!other.gameObject.CompareTag(gameObject.tag)) && other.GetComponent<Interactable>())
         {
             Debug.Log(other.gameObject.name);
             

@@ -19,12 +19,13 @@ public class Mission_5_UI_Control : MonoBehaviour
     public string selectedRecipe;
     public bool clicked;
 
+    public RecipeSelect RecipeSelect;
+
     private void Awake()
     {
         rightRecipeButton.onClick.AddListener(RightRecipeOperations);
         leftRecipeButton.onClick.AddListener(LeftRecipeOperations);
     }
-    
     
     public void LeftRecipeOperations()
     {
@@ -36,10 +37,9 @@ public class Mission_5_UI_Control : MonoBehaviour
         rightRecipeButton.gameObject.SetActive(false);
         
         leftRecipeList.gameObject.SetActive(true);
-
+        
         //StartCoroutine(DisplayRecipe());
         
-
     }
 
     public void RightRecipeOperations()

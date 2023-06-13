@@ -22,6 +22,8 @@ TagManager:
   - knifeTip
   - Red
   - Yellow
+  - RightHandHoldArea
+  - LeftHandHoldArea
   layers:
   - Default
   - TransparentFX
