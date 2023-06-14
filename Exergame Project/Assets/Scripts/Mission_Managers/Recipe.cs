@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -32,6 +31,9 @@ public class Recipe : MonoBehaviour
     
     public GameObject leftRecipeList;
     public GameObject rightRecipeList;
+    
+    public GameObject leftRecipeSelector;
+    public GameObject rightRecipeSelector;
     
     public List<GameObject> requiredIngredientsRight;
     public List<GameObject> requiredIngredientsLeft;
@@ -86,6 +88,11 @@ public class Recipe : MonoBehaviour
         }
 
         isRecipeLoaded = true;
+        
+        rightRecipeSelector.SetActive(false);
+        leftRecipeSelector.SetActive(false);
+        
+        
     }
 
     private void OnCollisionEnter(Collision collision)

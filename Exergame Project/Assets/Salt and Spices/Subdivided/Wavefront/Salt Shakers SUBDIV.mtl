@@ -1,0 +1,42 @@
+# Blender MTL File: 'Salt Shakers.blend'
+# Material Count: 3
+
+newmtl Salt_Shaker
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Shaker\\Shaker NORMAL 4K.png
+map_Kd C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Shaker\\Shaker DIFFUSE 4K.png
+map_Ns C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Shaker\\Shaker ROUGHNESS 4K.png
+refl C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Shaker\\Shaker METALLIC 4K.png
+
+newmtl pepper
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.068577 0.068577 0.068577
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.200000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Pepper\\Pepper NORMAL 4K.png
+map_Kd C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Pepper\\Pepper DIFFUSE 4K.png
+map_Ns C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Pepper\\Pepper ROUGHNESS 4K.png
+
+newmtl salt
+Ns 900.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.990000 0.990000 0.990000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Salt\\Salt NORMAL 4K.png
+map_Kd C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Salt\\Salt DIFFUSE 4K.png
+map_Ns C:\\Users\\Patrik Žiaran\\Desktop\\Blender Stuff\\,Blend files\\Studio for selling\\Salt shakers\\Salt shaker Textures\\4K\\Salt\\Salt ROUGHNESS 4K.png

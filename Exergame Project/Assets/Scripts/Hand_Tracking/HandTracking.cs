@@ -248,7 +248,7 @@ public class HandTracking : MonoBehaviour
 
             foreach (var hitCollider in hitColliders)
             {
-                if (hitCollider.gameObject.GetComponent<Interactable>() && hitCollider.gameObject.name.Contains("holdable"))
+                if (hitCollider.gameObject.GetComponent<Interactable>())
                 {
                     float objectDistance = Vector3.Distance(hitCollider.gameObject.transform.position, center);
                     if (objectDistance < distance)
